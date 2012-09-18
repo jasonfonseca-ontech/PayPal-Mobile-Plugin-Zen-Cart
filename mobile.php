@@ -38,7 +38,7 @@ function matchhome(){
 	$requestURI = $_SERVER['REQUEST_URI']; 
 	
 	$catalogFolder = DIR_WS_CATALOG;
-	$catalogFolder = preg_replace("/\\/$/", "", $catalogFolder);
+	$catalogFolder = preg_replace("/\/+$/", "", $catalogFolder);
 	$subject = preg_replace("/".preg_quote($catalogFolder, "/")."/", "", $requestURI);
   
 	$pattern = '/^\/(?:$|\?)/';
